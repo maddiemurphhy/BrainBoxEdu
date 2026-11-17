@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Subjects · BrainBoxEdu</title>
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-hidden="true">BB</div>
+        <span class="brand-name">BrainBoxEdu</span>
+      </a>
+
+      <div class="navbar-actions">
+        <a href="index.html#how-it-works" class="btn-text">How It Works</a>
+        <a href="login.html" class="btn btn-primary">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="simple-page">
+      <h1 class="section-title">Explore Subjects</h1>
+      <p class="section-subtitle">
+        Search for a subject to see the kind of study material BrainBoxEdu works with.
+      </p>
+
+      <!-- TODO(subjects-feature): this is a placeholder -- it doesn't
+           search anything real yet. Wire this input + button up once
+           there's an actual subjects list/endpoint to search against. -->
+      <form class="search-bar" id="subject-search-form">
+        <input
+          type="text"
+          id="subject-search-input"
+          placeholder="Try “biology,” “calculus,” “world history”…"
+          autocomplete="off"
+        />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+
+      <p class="placeholder-note" id="placeholder-note"></p>
+    </section>
+
+    <!-- ===================== SUBJECTS OVERVIEW ===================== -->
+    <section class="subjects-overview">
+      <div class="subjects-overview-inner">
+        <h2 class="section-title">Subjects We Cover</h2>
+        <p class="section-subtitle">
+          A sample of what BrainBoxEdu can turn into study questions —
+          click one to try it in the search bar above.
+        </p>
+
+        <div class="subjects-grid">
+          <button type="button" class="subject-card" data-subject="Biology">
+            <div class="subject-icon">🧬</div>
+            <h3 class="subject-name">Biology</h3>
+            <p class="subject-description">Cell biology, genetics, ecology, and lab notes.</p>
+          </button>
+
+          <button type="button" class="subject-card" data-subject="Calculus & Math">
+            <div class="subject-icon">🧮</div>
+            <h3 class="subject-name">Calculus &amp; Math</h3>
+            <p class="subject-description">Derivatives, integrals, proofs, and problem sets.</p>
+          </button>
+
+          <button type="button" class="subject-card" data-subject="Chemistry">
+            <div class="subject-icon">⚗️</div>
+            <h3 class="subject-name">Chemistry</h3>
+            <p class="subject-description">Reactions, stoichiometry, and lab concepts.</p>
+          </button>
+
+          <button type="button" class="subject-card" data-subject="History">
+            <div class="subject-icon">📜</div>
+            <h3 class="subject-name">History</h3>
+            <p class="subject-description">World, U.S., and regional history courses.</p>
+          </button>
+
+          <button type="button" class="subject-card" data-subject="Computer Science">
+            <div class="subject-icon">💻</div>
+            <h3 class="subject-name">Computer Science</h3>
+            <p class="subject-description">Algorithms, data structures, and core concepts.</p>
+          </button>
+
+          <button type="button" class="subject-card" data-subject="English & Literature">
+            <div class="subject-icon">📖</div>
+            <h3 class="subject-name">English &amp; Literature</h3>
+            <p class="subject-description">Essays, novels, and literary analysis.</p>
+          </button>
+
+          <button type="button" class="subject-card" data-subject="Foreign Languages">
+            <div class="subject-icon">🌍</div>
+            <h3 class="subject-name">Foreign Languages</h3>
+            <p class="subject-description">Vocabulary, grammar, and reading comprehension.</p>
+          </button>
+
+          <button type="button" class="subject-card" data-subject="Economics & Business">
+            <div class="subject-icon">💰</div>
+            <h3 class="subject-name">Economics &amp; Business</h3>
+            <p class="subject-description">Micro/macro theory, case studies, and models.</p>
+          </button>
+
+          <button type="button" class="subject-card" data-subject="Psychology">
+            <div class="subject-icon">🧠</div>
+            <h3 class="subject-name">Psychology</h3>
+            <p class="subject-description">Cognition, behavior, and research methods.</p>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/explore-subjects.js"></script>
+</body>
+</html>

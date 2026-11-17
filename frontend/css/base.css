@@ -1,0 +1,178 @@
+/* ---------------------------------------------------------------
+   base.css -- shared across every page (login, welcome, explore
+   subjects, and whatever we build next). Colors, the CSS reset,
+   reusable button styles, and the navbar/brand mark all live here
+   ONCE so every page looks like the same product instead of each
+   page accidentally drifting its own slightly-different blue.
+
+   Page-specific files (auth.css, home.css) link this file first,
+   then add only what's unique to that page.
+   ----------------------------------------------------------------*/
+
+:root {
+  /* Classic-academic palette: navy + gold on a warm parchment
+     background, instead of the cooler gray/white from before. */
+  --color-primary: #1B2A4A;
+  --color-primary-dark: #11192E;
+  --color-primary-light: #E6E9F2;
+  --color-gold: #C9A227;
+  --color-gold-dark: #A6841C;
+  --color-bg: #F2E8D5;
+  --color-card: #FFFBF2;
+  --color-text: #22241F;
+  --color-text-muted: #7A7260;
+  --color-border: #D8CBA8;
+  --color-error: #DC2626;
+  --radius: 12px;
+  --max-content-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Smooth-scrolls to in-page anchors, e.g. the "How It Works" nav
+   link jumping to #how-it-works on the welcome page -- no JS needed
+   for that to feel nice instead of an instant jump-cut. */
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+}
+
+/* --- Reusable brand mark (logo + name), used in every page's navbar --- */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* --- Reusable buttons --------------------------------------------------
+   .btn is the base; add .btn-primary (solid) or .btn-outline (ghost)
+   on top of it. Using the same two button styles everywhere means
+   "Start Learning," "Get Started," and "Log in" all look related. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  border-radius: 999px; /* fully-rounded "pill" buttons, matching the new design direction */
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-text:hover {
+  color: var(--color-primary);
+}
+
+/* --- Shared navbar, used on welcome + explore-subjects (login's
+   auth card has its own smaller brand treatment and no navbar) --- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Lets the brand and the nav buttons drop to their own line instead
+     of overlapping when they don't both fit on one line (see the
+     narrow-screen fix below). */
+  flex-wrap: wrap;
+  row-gap: 10px;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+
+.brand {
+  /* Without this, the flex container can shrink the brand's text
+     and crowd it into whatever sits next to it instead of wrapping. */
+  flex-shrink: 0;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* On narrow screens, the brand and buttons wrap onto two lines (via
+   flex-wrap above) rather than overlapping or squeezing together. */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px;
+  }
+  .navbar-actions {
+    gap: 8px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .navbar-actions .btn,
+  .navbar-actions .btn-text {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Session · BrainBoxEdu</title>
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-hidden="true">BB</div>
+        <span class="brand-name">BrainBoxEdu</span>
+      </a>
+
+      <div class="navbar-actions">
+        <button type="button" class="btn-text" id="logout-button">Log out</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <div class="dashboard-inner">
+        <h1 class="section-title">Your Study Session</h1>
+        <p class="section-subtitle">
+          Upload your notes and we'll turn them into study questions grounded
+          in your own material.
+        </p>
+
+        <!-- ===================== STEP 1: UPLOAD ===================== -->
+        <div class="dashboard-card" id="upload-card">
+          <h2 class="card-title"><span class="step-number">1</span> Upload your notes</h2>
+          <p class="card-hint">PDF, Word doc, PowerPoint, or plain text.</p>
+
+          <form id="upload-form">
+            <label class="file-drop" for="file-input" id="file-drop-label">
+              <span id="file-drop-text">Choose a file…</span>
+            </label>
+            <input type="file" id="file-input" accept=".pdf,.docx,.pptx,.txt" hidden />
+
+            <p class="field-error" id="upload-error"></p>
+
+            <button type="submit" class="btn btn-primary" id="upload-button" disabled>
+              Upload
+            </button>
+          </form>
+        </div>
+
+        <!-- ============ STEP 2: CONFIDENCE CHECK + GENERATE ============ -->
+        <div class="dashboard-card" id="confidence-card" hidden>
+          <h2 class="card-title"><span class="step-number">2</span> What we found</h2>
+
+          <p class="uploaded-filename" id="confidence-filename"></p>
+
+          <div class="confidence-row">
+            <span class="confidence-badge" id="confidence-badge"></span>
+            <p class="confidence-message" id="confidence-message"></p>
+          </div>
+
+          <div class="generate-controls">
+            <label for="num-questions">Number of questions</label>
+            <input type="number" id="num-questions" min="1" max="20" value="5" />
+            <button type="button" class="btn btn-primary" id="generate-button">
+              Generate Questions
+            </button>
+          </div>
+
+          <p class="field-error" id="generate-error"></p>
+        </div>
+
+        <!-- ===================== STEP 3: QUESTIONS ===================== -->
+        <div class="dashboard-card" id="questions-card" hidden>
+          <h2 class="card-title"><span class="step-number">3</span> Your study questions</h2>
+
+          <div id="questions-list"></div>
+
+          <button type="button" class="btn btn-outline" id="upload-another-button">
+            Upload a different file
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

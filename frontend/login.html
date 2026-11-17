@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log in · BrainBoxEdu</title>
+
+  <!-- Playfair Display is used for the "Welcome Back" headline below,
+       matching the style of the welcome page's hero. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- base.css has the shared colors/reset/buttons/brand mark used on
+       every page; auth.css has styles specific to this login-card
+       layout. Loading base.css first means auth.css can rely on the
+       variables and .brand styles it defines. -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <main class="auth-page">
+    <div class="auth-card">
+
+      <!-- The mascot doubles as the way back to the welcome page,
+           same job the small "BB" logo mark used to do. -->
+      <a href="index.html" class="login-mascot-link">
+        <img alt="BrainBoxEdu mascot" class="login-mascot brainbox-mascot" />
+      </a>
+
+      <h1 class="login-welcome">Welcome <span class="accent">Back</span></h1>
+      <p class="auth-subtitle">Log in to keep studying.</p>
+
+      <!-- novalidate turns off the browser's built-in validation popups
+           so our own JS (js/login.js) can show matching, styled error
+           messages instead -- otherwise you get two different-looking
+           error systems fighting each other. -->
+      <form id="login-form" novalidate>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@school.edu"
+            autocomplete="email"
+          />
+          <p class="field-error" id="email-error"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              id="toggle-password"
+              aria-label="Show password"
+            >Show</button>
+          </div>
+          <p class="field-error" id="password-error"></p>
+        </div>
+
+        <!-- This is where a login-failed message goes (e.g. "wrong
+             password") once this form is wired up to the real backend.
+             It's hidden by default. -->
+        <p class="form-error" id="form-error" hidden></p>
+
+        <button type="submit" class="submit-button" id="submit-button">
+          Log in
+        </button>
+      </form>
+
+      <p class="auth-footer">
+        Don't have an account?
+        <a href="#" id="signup-link">Sign up</a>
+      </p>
+
+    </div>
+  </main>
+
+  <script src="js/login.js"></script>
+  <script src="js/mascot-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# --- Python / backend ---
+backend/venv/
+backend/__pycache__/
+**/__pycache__/
+*.pyc
+backend/.env
+*.db
+
+# --- Node (in case this grows later) ---
+node_modules/
+
+# --- OS / editor junk ---
+.DS_Store
+.vscode/
+.idea/

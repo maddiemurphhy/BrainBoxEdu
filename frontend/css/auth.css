@@ -1,0 +1,192 @@
+/* ---------------------------------------------------------------
+   auth.css -- styles specific to the login/signup-style pages.
+   Shared variables, reset, and the .brand styles live in base.css
+   (loaded before this file), so this file only has what's unique
+   to the centered-card auth layout.
+   ----------------------------------------------------------------*/
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  background-color: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-mascot-link {
+  display: block;
+  width: 120px;
+  margin: 0 auto 12px;
+}
+
+.login-mascot {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.login-welcome {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 0 6px;
+}
+
+.login-welcome .accent {
+  color: var(--color-gold-dark);
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin: 0 0 28px;
+  font-size: 14px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-field input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.form-field input.invalid {
+  border-color: var(--color-error);
+}
+
+.field-error {
+  color: var(--color-error);
+  font-size: 12px;
+  margin: 6px 0 0;
+  min-height: 14px;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.password-wrapper input {
+  flex: 1;
+  padding-right: 60px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.toggle-password:hover {
+  color: var(--color-primary-dark);
+}
+
+.form-error {
+  background-color: #FEF2F2;
+  color: var(--color-error);
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  margin: 0 0 16px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+.submit-button:disabled {
+  background-color: #A5A6F0;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 24px 0 0;
+}
+
+.auth-footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+.success-state {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.success-state .checkmark {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #DCFCE7;
+  color: #16A34A;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.success-state p {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}

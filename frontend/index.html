@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainBoxEdu · Unbox Your Mental Potential</title>
+
+  <!-- Playfair Display is only used for the big italic headline below --
+       the rest of the site keeps its normal sans-serif font. Loading
+       just the two weights/styles we actually use keeps this light. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <!-- No navbar on this page by design -- the hero below is the whole
+       top of the page. (login.html and explore-subjects.html still
+       have their own navbar to get back here.) -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Unbox your <span class="accent">Mental Potential</span>
+        </h1>
+
+        <div class="hero-actions">
+          <a href="#get-started" class="btn btn-primary">Start Learning</a>
+          <a href="explore-subjects.html" class="btn btn-outline">Explore Subjects</a>
+          <a href="#how-it-works" class="btn btn-primary">How it works</a>
+        </div>
+      </div>
+
+      <!-- The BrainBoxEdu mascot -- your own image, background removed
+           so it sits cleanly on the page instead of showing a white box. -->
+      <div class="hero-mascot">
+        <img class="brainbox-mascot" alt="BrainBoxEdu mascot: a brain wearing glasses and a graduation cap, sitting in an open box" />
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <!-- Scroll target for the "How it works" button above. -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="how-it-works-inner">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">
+          Three steps from "a pile of notes" to "questions you can actually study from."
+        </p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Upload your notes</h3>
+            <p class="step-description">
+              Drop in lecture slides, notes, or readings — PDFs, Word docs,
+              PowerPoints, or plain text all work.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">We check what we can read</h3>
+            <p class="step-description">
+              If a file comes through too thin or garbled to trust, we'll
+              say so before generating anything from it.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Get grounded questions</h3>
+            <p class="step-description">
+              Every question comes with the exact excerpt it's based on,
+              so you can double-check it against your own material.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GET STARTED (closing CTA) ===================== -->
+    <!-- Scroll target for the hero's "Start Learning" button -- reveals
+         this closing pitch before sending anyone to the actual login page. -->
+    <section class="get-started" id="get-started">
+      <div class="get-started-inner">
+        <h2 class="get-started-title">
+          Ready to <span class="accent">start learning</span>?
+        </h2>
+        <p class="section-subtitle">
+          Upload your notes and get your first set of grounded study
+          questions in minutes.
+        </p>
+        <a href="login.html" class="btn btn-primary btn-large">Create Your Account</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/mascot-loader.js"></script>
+</body>
+</html>

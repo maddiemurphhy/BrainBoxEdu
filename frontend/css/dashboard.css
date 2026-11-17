@@ -1,0 +1,199 @@
+/* ---------------------------------------------------------------
+   dashboard.css -- the post-login study session page: upload a
+   file, see the confidence check, generate questions, view them.
+   Shared variables, reset, and .brand/.btn styles live in base.css
+   (loaded before this file).
+   ----------------------------------------------------------------*/
+
+.dashboard {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+}
+
+.dashboard-inner .section-title {
+  margin-bottom: 4px;
+}
+
+.dashboard-inner .section-subtitle {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.dashboard-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.card-hint {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  margin: 0 0 18px;
+}
+
+/* --- Upload --- */
+
+.file-drop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+  border: 1.5px dashed var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  text-align: center;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  margin-bottom: 16px;
+}
+
+.file-drop:hover,
+.file-drop.has-file {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+}
+
+/* --- Confidence check --- */
+
+.uploaded-filename {
+  font-weight: 600;
+  margin: 0 0 12px;
+  word-break: break-word;
+}
+
+.confidence-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.confidence-badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.confidence-badge.high {
+  background-color: #DCFCE7;
+  color: #16A34A;
+}
+
+.confidence-badge.low {
+  background-color: #FEF3C7;
+  color: #B45309;
+}
+
+.confidence-message {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.generate-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.generate-controls label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.generate-controls input[type="number"] {
+  width: 70px;
+  padding: 9px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* --- Questions list --- */
+
+.question-item {
+  border-top: 1px solid var(--color-border);
+  padding: 18px 0;
+}
+
+.question-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.question-text {
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.reveal-answer-btn {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.answer-block {
+  background-color: var(--color-primary-light);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.answer-text {
+  margin: 0 0 10px;
+}
+
+.source-excerpt {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 3px solid var(--color-gold);
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+#upload-another-button {
+  margin-top: 20px;
+}
+
+/* --- Shared loading/error bits --- */
+
+.field-error {
+  color: var(--color-error);
+  font-size: 13px;
+  margin: 0 0 14px;
+  min-height: 14px;
+}
